@@ -29,5 +29,10 @@
   ],
   "bin": {
     "normalize-registry-module-bindings": "scripts/normalize-registry-module-bindings.mjs"
+  },
+  "license": "MIT",
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/561-group/.github/blob/main/TIPS.md"
   }
 }
