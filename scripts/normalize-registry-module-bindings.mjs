@@ -11,6 +11,6 @@ const finish = current => ({ ...current, visited: [...visited, ...current.visite
 const result = await normalizeRegistryModuleBindings({ ...selection, packageDirs: selection.packageDirs.filter(dir => !visited.has(dir)), onProgress: async current => {
   await writeFile(output, `${JSON.stringify({ ...finish(current), phase: "applying" }, null, 2)}\n`);
 } });
-const receipt = { ...finish(result), phase: "complete" };
-await writeFile(output, `${JSON.stringify(receipt, null, 2)}\n`);
-console.log(JSON.stringify({ phase: receipt.phase, packages: receipt.visited.length, changed: receipt.changed.length }));
+const record = { ...finish(result), phase: "complete" };
+await writeFile(output, `${JSON.stringify(record, null, 2)}\n`);
+console.log(JSON.stringify({ phase: record.phase, packages: record.visited.length, changed: record.changed.length }));
